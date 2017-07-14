@@ -1,7 +1,7 @@
 <?php
 /*
  * Sample call: ping.php?host=192.168.0.1
- * Sample result: {"up":true,"host":"192.168.0.11"}
+ * Sample result: {"up":true,"host":"192.168.0.1"}
  */
 
 /*
