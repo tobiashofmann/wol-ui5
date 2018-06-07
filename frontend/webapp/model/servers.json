@@ -1,0 +1,54 @@
+{
+	"servers" : [
+	{
+		"name": "Server",
+		"location": "living room",
+		"description": "lorem ipsum",
+		"ip": "1.1.1.1",
+		"mac": "aa:bb:cc:00:11:22",
+		"broadcast": "1.1.1.255",
+		"running": false,
+		"services": [
+			{
+				"name": "Web",
+				"url" : "1.1.1.2",
+				"protocol": "http",
+				"port": 8080,
+				"uri": "/"
+ 			}
+			]
+	},
+	{
+		"name": "Datacenter",
+		"location": "somehwere",
+		"description": "lorem ipsum",
+		"ip": "2.2.2.2",
+		"mac": "aa:bb:cc:00:11:33",
+		"broadcast": "2.2.2.255",
+		"running": false, 
+		"services": [
+			{
+				"name": "Web server",
+				"url" : "web.example.com",
+				"protocol": "https",
+				"port": 443,
+				"uri": "/"
+ 			},
+ 			{
+				"name": "Database",
+				"url" : "db.example.com",
+				"protocol": "https",
+				"port": 443,
+				"uri": "/"
+ 			},
+ 			{
+				"name": "Gitlab",
+				"url" : "gitlab.example.com",
+				"protocol": "https",
+				"port": 443,
+				"uri": "/"
+ 			}
+		]
+	}
+	]
+}
