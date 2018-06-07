@@ -1,0 +1,65 @@
+<mvc:View 
+    controllerName="de.itsfullofstars.wol.WOL.controller.Home" 
+    xmlns:html="http://www.w3.org/1999/xhtml" 
+    xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	
+	<App id="idAppControl">
+		<Page title="{i18n>title}">
+			<subHeader>
+					<Toolbar>
+						<SearchField
+							liveChange="onSearch"
+							placeholder="{i18n>home.searchfield.placeholder}"
+							width="100%" />
+					</Toolbar>
+				</subHeader>
+			<content>
+				<List
+					id="serverList"
+					items="{
+						path: 'server>/servers'
+					}" >
+					<headerToolbar>
+						<Toolbar>
+							<Title text="{i18n>home.header.toolbar.title}" level="H2" />
+							<ToolbarSpacer />
+							<Button
+								icon="sap-icon://refresh"
+								tooltip="{i18n>home.toolbar.button.refresh.tooltip}"
+								press="handleRefresh" />
+							<Button
+								icon="sap-icon://drop-down-list"
+								tooltip="{i18n>home.toolbar.button.config.tooltip}"
+								press="handleButtonPress" />
+						</Toolbar>
+					</headerToolbar>
+					<items>
+						<ObjectListItem
+							id="idObjectHeader"
+							type="Active"
+							title="{server>name}"
+							press="handleShowDetails"
+							number="{
+								parts:[{path:'server>ip'}],
+								type: 'sap.ui.model.type.Currency'
+							}"
+							numberUnit="{i18n>home.list.attribute.numberUnit}">
+							<firstStatus>
+								<ObjectStatus
+									text="{
+										path: 'server>running',
+										formatter: 'de.itsfullofstars.wol.WOL.model.Formatter.statusText'
+									}"
+									state="{
+										path: 'server>running',
+										formatter: 'de.itsfullofstars.wol.WOL.model.Formatter.status'
+									}" />
+							</firstStatus>
+						</ObjectListItem>
+					</items>
+				</List>
+			</content>
+		</Page>
+	</App>
+</mvc:View>

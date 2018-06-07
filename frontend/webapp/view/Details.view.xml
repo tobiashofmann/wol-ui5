@@ -1,0 +1,82 @@
+<mvc:View 
+    xmlns:core="sap.ui.core" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m"     
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="de.itsfullofstars.wol.WOL.controller.Details">
+	
+	<Page 
+		title="{i18n>details.page.title}"
+		showNavButton="true" 
+		navButtonText="{i18n>details.page.nav.button.text}" 
+		navButtonTooltip="{i18n>details.page.nav.button.tooltip}"
+		navButtonPress="onNavBack">
+		
+		<headerContent>
+			<Button
+				icon="sap-icon://refresh"
+				press="handleRefresh" />
+		</headerContent>
+		
+		<content>
+			
+			<ObjectListItem
+				id="idObjectHeader"
+				title="{server>name}"
+				intro="{server>description}"
+				press="handleShowDetails"
+				number="{
+					parts:[{path:'server>ip'}],
+					type: 'sap.ui.model.type.Currency'
+				}"
+				numberUnit="{i18n>home.list.attribute.numberUnit}">
+				<firstStatus>
+					<ObjectStatus
+						text="{
+							path: 'server>running',
+							formatter: 'de.itsfullofstars.wol.WOL.model.Formatter.statusText'
+						}"
+						state="{
+							path: 'server>running',
+							formatter: 'de.itsfullofstars.wol.WOL.model.Formatter.status'
+						}" />
+				</firstStatus>
+				<attributes>
+					<ObjectAttribute text="{i18n>details.list.attribute.location}: {server>location}" />
+					<ObjectAttribute text="{i18n>details.list.attribute.mac}: {server>mac}" />
+				</attributes>
+			</ObjectListItem>
+			
+			<List
+				headerText="{i18n>details.list.header}"
+				items="{
+					path: 'server>services'
+				}" >
+				<CustomListItem>
+					<FlexBox
+						alignItems="Start"
+						class="sapUiSmallMargin"
+						justifyContent="SpaceBetween">
+						<items>
+							<Label text="{server>name}"/>
+							<Link
+								text="{i18n>details.list.link.text}"
+								target="_blank"
+								href="{server>protocol}://{server>url}:{server>port}{server>uri}" />
+						</items>
+					</FlexBox>
+				</CustomListItem>
+			</List>
+			
+		</content>
+		
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button text="{i18n>details.footer.start}" type="Accept" press="handleStartServer"/>
+			</Toolbar>
+		</footer>
+		
+	</Page>
+	
+</mvc:View>
