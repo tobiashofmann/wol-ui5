@@ -1,0 +1,28 @@
+{
+  "name": "wol",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "grunt": "^1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-jsdoc": "^2.2.1",
+    "grunt-openui5": "^0.13.0",
+    "karma": "^2.0.2",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage": "^1.1.2",
+    "karma-coverage-istanbul-reporter": "^2.0.1",
+    "karma-openui5": "^0.2.3",
+    "karma-qunit": "^1.2.1",
+    "karma-sinon": "^1.0.5",
+    "karma-sonarqube-generic-reporter": "https://github.com/tobiashofmann/karma-sonarqube-generic-reporter/#master",
+    "qunitjs": "^2.0.0"
+  },
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {}
+}
