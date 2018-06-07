@@ -1,0 +1,117 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "de.itsfullofstars.wol.WOL",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "de.itsfullofstars.wol.WOL.view.Home",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "de.itsfullofstars.wol.WOL.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "de.itsfullofstars.wol.WOL.view",
+				"controlAggregation": "pages",
+				"controlId": "idAppControl",
+				"clearControlAggregation": false
+			},
+			"routes": [
+				{
+					"name": "Home",
+					"pattern": "",
+					"target": [
+						"Home"
+					]
+				},{
+					"name": "Details",
+					"pattern": "details/{id}",
+					"target": [
+						"Details"
+					]
+				}
+			],
+			"targets": {
+				"Home": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "Home",
+					"routerClass": "sap.m.routing.Router",
+					"async": true,
+					"viewPath": "de.itsfullofstars.wol.WOL.view",
+					"controlAggregation": "pages",
+					"controlId": "idAppControl"
+				},
+				"Details": {
+					"viewType": "XML",
+					"viewName": "Details",
+					"transition": "slide",
+					"viewPath": "de.itsfullofstars.wol.WOL.view",
+					"routerClass": "sap.m.routing.Router",
+					"async": true
+				}
+			}
+		}
+	}
+}
