@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QUnit TestSuite for UnitTest</title>
+		<script src="../../../resources/sap/ui/qunit/qunit-redirect.js"></script>
+		<script type="text/javascript" src="../../../../../resources/sap/ui/qunit/qunit-coverage.js"></script>
+		<script>
+		/**
+		 * Add test pages to this test suite function.
+		 */
+		function suite() {
+			var oSuite = new parent.jsUnitTestSuite(),
+				sContextPath = location.pathname.substring(0, location.pathname.lastIndexOf("/") + 1);
+			oSuite.addTestPage(sContextPath + "unit/unitTests.qunit.html");
+			return oSuite;
+		}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
